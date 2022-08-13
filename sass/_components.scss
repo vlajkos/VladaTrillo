@@ -1,0 +1,342 @@
+//LOGO 
+.logo {
+    width: 100%;
+    display: block;
+}
+.logo-box {
+    width: 4.75rem;
+    margin-left: 2rem;
+}
+
+
+//SEARCH
+
+.search {
+    display: flex;
+    flex: 0 0 40%;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        width: 90%;
+        margin-right: -3.25rem;
+        padding: .7rem 2rem;
+        border: none;
+        background-color: var(--color-grey-light-2);
+        border-radius: 100px;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        
+
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+            transition: all .2s;
+        }
+        &::-webkit-input-placeholder { /* Edge */
+           color: var(--color-grey-dark-3); 
+           font-weight: 100;
+          }
+          
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: var(--color-grey-light-4); 
+            font-weight: 100;
+          }
+          
+        &::placeholder {
+            color: var(--color-grey-light-4); 
+            font-weight: 100;
+          }
+
+    }
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        background-color: var(--color-grey-light-2);
+        border: none;
+
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-grey-dark-3);
+    }
+}
+
+
+
+
+//USER NAVIGATION
+.user-nav {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    
+
+
+   
+    
+    & > * {
+        padding: 0 2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+
+        &:hover {
+            background-color: var(--color-grey-light-2);
+            cursor: pointer;
+        }
+    }
+    &__icon-box {
+        position: relative;
+    }
+    &__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        fill: var(--color-grey-dark-2)
+
+    }
+    &__notification {
+        background-color: var(--color-primary);
+        color: #fff;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+    }
+    &__user-photo {
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 100px;
+        margin-right: 1rem;
+    }
+
+    &__profile-menu {
+        display: flex;
+        align-items: center;
+    }
+
+
+
+}
+
+//SIDE NAV
+
+.side-nav {
+   display: flex;
+   flex-direction: column;
+   list-style: none;
+   margin-top: 3.5rem;
+  
+
+
+    &__item {
+        position: relative;
+       
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+        &--active {
+            background-color: var(--color-primary);
+
+            &:active {
+                background-color: var(--color-primary-light);
+
+            }
+        }
+        
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: var(--color-primary);
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            transform: scaleY(0);
+            transition: transform .2s,
+                        width .4s cubic-bezier(1,0,0,1) .2s,
+                        background-color .1s
+
+        }
+         &:hover::before {
+            transform: scaleY(1);
+            width: 100%;
+            background-color: var(--color-primary) ;
+         }
+         &:active::before {
+            background-color: var(--color-primary-light);
+         }
+    }
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: #fff;
+        
+        
+    }
+    &__link:link,
+    &__link:visited {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.4rem;       
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 3rem;
+        position: relative;
+        z-index: 5;
+        
+    
+}
+}
+
+
+//LEGAL TEXT 
+
+.legal {
+    color:  var(--color-grey-light-4);
+    font-size: 1.2rem;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+//GALLERY
+
+.gallery {
+    display: flex;
+    &__img {
+        width: 100%;
+        display: block;
+    }
+}
+
+
+//HOTEL OVERVIEW
+
+.overview  {
+    display: flex;
+    align-items: center;
+    border-bottom: var(--line);
+    
+    &__heading {
+        font-size: 2.25rem;
+        text-transform: uppercase;
+        font-weight: 100;
+        padding: 1.5rem 3rem;
+        letter-spacing: 1px;
+
+    }
+
+    &__stars {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon-star {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+
+    }
+    &__location {
+        display: flex;
+        align-items: center;
+        margin-right: 3rem;
+
+    }
+
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        padding: 0 2.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-primary);
+        color: #fff;
+        align-self: stretch;
+        
+}
+ 
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        line-height: 1;
+    }
+    &__rating-count {
+        font-size: .8rem;
+        
+}
+}
+
+//BUTTON INLINE
+
+.button-inline {
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    color: var(--color-primary) ;
+    font-size: 1.2rem;
+    align-self: flex-start;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+        color: #000;
+    }
+    &:focus {
+        animation: pulsate 1s infinite;
+
+    }
+    
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow:none;
+        
+
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
+        
+    }
+    100% {
+        transform: scale(1);
+        box-shadow:none;
+
+    }
+}
